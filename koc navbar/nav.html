@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <style>
+            *{
+        box-sizing: border-box;
+        margin: 0;
+      }
+      .srs_navbar_up_part {
+        background-color: #0e1c41;
+        padding: 7px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .srs_navbar_up_part .srs_icon_sec {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .srs_navbar_up_part .srs_icon_sec img {
+        width: 20px;
+        height: 20px;
+      }
+      .srs_navbar_up_part .srs_quote {
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-family: "Manrope", sans-serif;
+        margin: 0;
+        line-height: 27px;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .srs_navbar_up_part .srs_quote a {
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-family: "Manrope", sans-serif;
+        margin: 0;
+        line-height: 27px;
+        font-weight: 400;
+        margin-left: 5px;
+        display: flex;
+        text-decoration: none;
+        position: relative;
+      }
+      .srs_navbar_up_part .srs_quote a:hover {
+        color: #00c1eb;
+      }
+      .srs_navbar_up_part .srs_quote a::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        height: 1px;
+        bottom: 3px;
+        left: 0;
+        right: 0;
+        background-color: currentColor;
+        -webkit-transform-origin: bottom left;
+        transform-origin: bottom left;
+        -webkit-transition: transform 0.25s ease-out;
+        transition: transform 0.25s ease-out;
+      }
+      .srs_navbar_up_part .srs_quote a:hover::before {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: bottom right;
+        transform-origin: bottom right;
+      }
+
+      .srs_navbar_up_part .srs_name_sec .srs_userName {
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-family: "Manrope", sans-serif;
+        margin: 0;
+        line-height: 27px;
+        font-weight: 400;
+      }
+      @media (max-width: 900px) {
+        .srs_navbar_up_part {
+          padding: 7px 20px;
+        }
+      }
+      @media (max-width: 767px) {
+        .srs_navbar_up_part {
+          flex-direction: column;
+        }
+        .srs_navbar_up_part .srs_quote {
+          font-size: 12px;
+        }
+        .srs_navbar_up_part .srs_quote a {
+          font-size: 12px;
+        }
+      }
+
+      .srs_navbar_btm_part nav.srs_navbar_pr {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        margin: 20px auto;
+      }
+
+      .srs_navbar_btm_part {
+        padding: 0px 50px;
+      }
+      .srs_navbar_btm_part nav.srs_navbar_pr .srs_logo img {
+        width: 170px;
+      }
+
+      .srs_navbar_btm_part nav.srs_navbar_pr .srs_nav_items {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+
+      .srs_navbar_btm_part nav.srs_navbar_pr .srs_nav_items .srs_nav_link {
+        padding: 8px 20px;
+        text-decoration: none;
+        color: #0e1c41;
+        font-family: "Manrope", sans-serif;
+        display: block;
+      }
+      .srs_navbar_btm_part nav.srs_navbar_pr .srs_nav_items .srs_nav_link span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+      }
+      .srs_navbar_btm_part nav.srs_navbar_pr .srs_nav_items > .srs_nav_item {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        > .srs_nav_item:hover
+        .srs_mega_menu
+        .srs_inner_items {
+        visibility: visible;
+        top: 80px;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        > .srs_nav_item:hover
+        .srs_mega_menu
+        .srs_inner_items_all {
+        visibility: visible;
+        top: 80px;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items_all {
+        visibility: hidden;
+        box-shadow: 0 0 8px 3px rgba(34, 40, 30, 0.08);
+        transition: top 0.25s cubic-bezier(0.25, 0.1, 0.11, 0.99) 0.1s,
+          opacity 0.2s cubic-bezier(0.25, 0.1, 0.11, 0.99) 0.1s,
+          height 0s ease-out 0.5s;
+        list-style: none;
+        margin: 0;
+        opacity: 1;
+        position: absolute;
+        left: -613px;
+        padding: 30px;
+        top: 110px;
+        text-align: left;
+        z-index: 10;
+        border-radius: 7px;
+        border-top: 0 solid;
+        width: 1300px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items {
+        visibility: hidden;
+        box-shadow: 0 0 8px 3px rgba(34, 40, 30, 0.08);
+        transition: top 0.25s cubic-bezier(0.25, 0.1, 0.11, 0.99) 0.1s,
+          opacity 0.25s cubic-bezier(0.25, 0.1, 0.11, 0.99) 0.1s,
+          height 0s ease-out 0.5s;
+        list-style: none;
+        margin: 0;
+        opacity: 1;
+        position: absolute;
+        left: 0;
+        padding: 15px 0px;
+        top: 110px;
+        text-align: left;
+        z-index: 10;
+        border-radius: 7px;
+        border-top: 0 solid;
+        width: 270px;
+      }
+
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items
+        .srs_inner_item
+        a {
+        padding: 6px 30px;
+        text-decoration: none;
+        font-size: 16px;
+        font-family: "Manrope", sans-serif;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items
+        .srs_inner_item
+        a:hover
+        span {
+        margin-left: 10px;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items
+        .srs_inner_item
+        a
+        span {
+        transition: all 0.2s ease-in-out;
+        color: #0e1c41;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items
+        .srs_inner_item
+        a:hover
+        span::before {
+        opacity: 1;
+        transform: scale(1) translateX(-20px) rotate(0deg);
+        background-color: #0e1c41;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items
+        .srs_inner_item
+        a
+        span::before {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 0;
+        /* left: 0; */
+        right: auto;
+        bottom: 0;
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 100 100' style='enable-background:new 0 0 100 100;' xml:space='preserve'%3E%3Cpath d='M50,98.7C43.8,61.1,38.8,56.1,0.5,50C38.8,43.9,43.8,38.9,50,1.3C56.2,38.9,61.2,43.9,99.5,50C61.2,56.1,56.2,61.1,50,98.7z '%3E%3C/path%3E%3C/svg%3E");
+
+        mask-repeat: no-repeat;
+
+        mask-position: center;
+
+        mask-size: 1em auto;
+
+        transform: scale(0.5) translateX(-35px) rotate(20deg);
+        background-color: #22281e;
+        transition: all 0.1s ease;
+        opacity: 0;
+        margin: auto;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items_all
+        .srs_inner_item
+        a {
+        text-decoration: none;
+        font-size: 16px;
+        font-family: "Manrope", sans-serif;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items_all
+        .srs_inner_item_sec {
+        width: 20%;
+        padding: 0;
+        text-decoration: none;
+        font-size: 16px;
+        font-family: "Manrope", sans-serif;
+        display: block;
+        list-style: none;
+        margin: 0;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items_all
+        .srs_inner_item_sec
+        img {
+        width: 100%;
+        border-radius: 7px;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items_all
+        .srs_course_title {
+        font-family: "DM Sans", sans-serif;
+        color: #22281e;
+        font-size: 20px;
+        line-height: 27px;
+        margin: 0;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e7e7e7;
+        margin-bottom: 20px;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items_all
+        .srs_inner_item {
+        margin-bottom: 15px;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items_all
+        .srs_inner_item:last-child {
+        margin-bottom: 0;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items_all
+        .srs_inner_item
+        a:hover
+        span {
+        margin-left: 20px;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items_all
+        .srs_inner_item
+        a
+        span {
+        transition: all 0.2s ease-in-out;
+        color: #0e1c41;
+        font-family: "Manrope", sans-serif;
+        font-size: 14px;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items_all
+        .srs_inner_item
+        a:hover
+        span::before {
+        opacity: 1;
+        transform: scale(1) translateX(-20px) rotate(0deg);
+        background-color: #0e1c41;
+      }
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .srs_nav_items
+        .srs_mega_menu
+        .srs_inner_items_all
+        .srs_inner_item
+        a
+        span::before {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 0;
+        /* left: 0; */
+        right: auto;
+        bottom: 0;
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 100 100' style='enable-background:new 0 0 100 100;' xml:space='preserve'%3E%3Cpath d='M50,98.7C43.8,61.1,38.8,56.1,0.5,50C38.8,43.9,43.8,38.9,50,1.3C56.2,38.9,61.2,43.9,99.5,50C61.2,56.1,56.2,61.1,50,98.7z '%3E%3C/path%3E%3C/svg%3E");
+
+        mask-repeat: no-repeat;
+
+        mask-position: center;
+
+        mask-size: 1em auto;
+
+        transform: scale(0.5) translateX(-35px) rotate(20deg);
+        background-color: #22281e;
+        transition: all 0.1s ease;
+        opacity: 0;
+        margin: auto;
+      }
+
+      .srs_navbar_btm_part nav.srs_navbar_pr .srs_cart_sec {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+      .srs_navbar_btm_part nav.srs_navbar_pr .srs_cart_sec .srs_search img {
+        width: 20px;
+        height: 20px;
+      }
+      .srs_navbar_btm_part nav.srs_navbar_pr .srs_cart_sec .srs_cart img {
+        width: 20px;
+        height: 20px;
+      }
+      .srs_navbar_btm_part nav.srs_navbar_pr .r-custom-4-button-h {
+        width: 100%;
+        font-family: sans-serif;
+        display: inline-block;
+      }
+
+      .srs_navbar_btm_part nav.srs_navbar_pr .r-custom-4-button-h .koc-buttn {
+        display: inline-block;
+        height: 45px;
+        line-height: 45px;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        background-color: #00c1eb;
+        color: white;
+        border-radius: 7px;
+        transition: 0.3s;
+        font-family: "DM Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .srs_navbar_btm_part nav.srs_navbar_pr .r-custom-4-button-h .label-up {
+        display: block;
+        margin: 0px 35px;
+        height: 100%;
+        position: relative;
+        top: 0%;
+        transition: 0.3s;
+      }
+
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .r-custom-4-button-h
+        .koc-buttn:hover
+        .label-up {
+        top: -100%;
+      }
+
+      .srs_navbar_btm_part nav.srs_navbar_pr .r-custom-4-button-h .label-down {
+        display: block;
+        margin: 0px 35px;
+        height: 100%;
+        position: relative;
+        top: -100%;
+        transition: 0.3s;
+      }
+
+      .srs_navbar_btm_part
+        nav.srs_navbar_pr
+        .r-custom-4-button-h
+        .koc-buttn:hover
+        .label-down {
+        top: 0%;
+      }
+      .srs_navbar_btm_part .srs_shiny_effect {
+        fill: #0e1c41;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+      .srs_navbar_btm_part .srs_shiny_effect > g.hambar-one {
+        transform: translateX(0%);
+        transition: all 500ms ease-in-out;
+      }
+
+      .srs_navbar_btm_part .srs_shiny_effect:hover > g.hambar-one {
+        transform: translateX(-109%);
+      }
+
+      .srs_navbar_btm_part .srs_shiny_effect > g.hambar-two {
+        transform: translateX(0%);
+        transition: all 700ms ease-in-out;
+      }
+
+      .srs_navbar_btm_part .srs_shiny_effect:hover > g.hambar-two {
+        transform: translateX(-109%);
+      }
+      body{
+        overflow-x: hidden !important;
+      }
+      .srs_pr_element {
+        position: relative;
+      }
+      .srs_about_us {
+        background: #fff;
+        padding: 40px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        max-width: 500px;
+        height: 100vh;
+        z-index: 12;
+        transform: translateX(100%);
+        transition: all .5s linear;
+      }
+      .srs_about_us.open{
+        transform: translateX(0);
+      }
+      .srs_about_us .srs_about_us_sec{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .srs_about_us .srs_title {
+        font-size: 29px;
+        line-height: 35px;
+        color: #22281e;
+        font-family: "DM Sans", sans-serif;
+        margin: 0;
+        margin-bottom: 20px;
+      }
+      .srs_about_us .srs_img {
+        width: 100%;
+      }
+      .srs_about_us .srs_des {
+        font-size: 16px;
+        font-family: "Manrope", sans-serif;
+        line-height: 27px;
+        color: #0e1c41;
+      }
+      .srs_about_us .r-custom-4-button-h .koc-buttn {
+        display: inline-block;
+        height: 45px;
+        line-height: 45px;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        background-color: #00c1eb;
+        color: white;
+        border-radius: 7px;
+        transition: 0.3s;
+        font-family: "DM Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .srs_about_us .r-custom-4-button-h .label-up {
+        display: block;
+        margin: 0px 35px;
+        height: 100%;
+        position: relative;
+        top: 0%;
+        transition: 0.3s;
+      }
+
+      .srs_about_us .r-custom-4-button-h .koc-buttn:hover .label-up {
+        top: -100%;
+      }
+
+      .srs_about_us .r-custom-4-button-h .label-down {
+        display: block;
+        margin: 0px 35px;
+        height: 100%;
+        position: relative;
+        top: -100%;
+        transition: 0.3s;
+      }
+
+      .srs_about_us .r-custom-4-button-h .koc-buttn:hover .label-down {
+        top: 0%;
+      }
+      .srs_about_us .srs_social {
+        margin-top: 30px;
+        padding: 20px 0;
+        border-top: 1px solid #0e1c41;
+        border-bottom: 1px solid #0e1c41;
+      }
+      .srs_about_us .srs_social .srs_title {
+        margin-bottom: 10px;
+      }
+      .srs_about_us .srs_social .srs_icon_div {
+        display: flex;
+        align-items: center;
+      }
+      .srs_about_us .srs_social .srs_icon_div .srs_icon_text {
+        font-size: 16px;
+        line-height: 29px;
+        font-family: "Manrope", sans-serif;
+        font-weight: 700;
+        color: #22281e;
+        margin-right: 10px;
+      }
+      .srs_about_us .srs_social .srs_icon_div .srs_icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s linear;
+        margin-left: 4px;
+      }
+      .srs_about_us .srs_social .srs_icon_div .srs_icon:hover {
+        border-radius: 50%;
+        background: #0e1c41;
+      }
+      .srs_about_us .srs_social .srs_icon_div .srs_icon:hover img {
+        filter: brightness(0) invert(1);
+      }
+      .srs_about_us .srs_contact .srs_title {
+        margin-bottom: 10px;
+        margin-top: 20px;
+      }
+      .srs_about_us .srs_contact .srs_contact_info{
+        display: flex;
+        align-items: center;
+        gap:16px;
+      }
+      .srs_about_us .srs_contact .srs_contact_info .srs_call{
+        display: flex;
+        align-items: center;
+        gap:5px;
+      }
+      .srs_about_us .srs_contact .srs_contact_info .srs_call img{
+        width: 20px;
+        height: 20px;
+      }
+      .srs_about_us .srs_contact .srs_contact_info .srs_call a{
+        font-size: 16px;
+        line-height: 29px;
+        font-family: "Dm Sans", sans-serif;
+        color: #0e1c41;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .srs_about_us .srs_contact .srs_contact_info .srs_email{
+        display: flex;
+        align-items: center;
+        gap:5px;
+      }
+      .srs_about_us .srs_contact .srs_contact_info .srs_email img{
+        width: 20px;
+        height: 20px;
+      }
+      .srs_about_us .srs_contact .srs_contact_info .srs_email a{
+        font-size: 16px;
+        line-height: 29px;
+        font-family: "Dm Sans", sans-serif;
+        color: #0e1c41;
+        font-weight: 600;
+        margin: 0;
+        text-decoration: none;
+      }
+      .srs_about_us .srs_about_us_sec .srs_close_about{
+        background-color: #0e1c41;
+        color: #fff;
+        position: absolute;
+        top: -20px;
+    right: -20px;
+    opacity: 1;
+    margin: 0px;
+    height: 50px;
+    width: 50px;
+    transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 0;
+    cursor: pointer;
+    border: none;
+      }
+      .srs_about_us .srs_about_us_sec .srs_close_about::before{
+        content: "";
+    width: 20px;
+    height: 2px;
+    background-color: currentColor;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 24px;
+    left: 14px;
+    transition: all 300ms ease-in-out;
+      }
+      .srs_about_us .srs_about_us_sec .srs_close_about::after{
+        content: "" !important;
+    width: 20px;
+    height: 2px;
+    background-color: currentColor;
+    position: absolute;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 24px;
+    left: 14px;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+      }
+      .srs_about_us .srs_about_us_sec .srs_close_about:hover:after{
+        transform: rotate(135deg);
+      }
+      .srs_about_us .srs_about_us_sec .srs_close_about:hover:before{
+        transform: rotate(-135deg);
+      }
+
+      .srs_pr_element .srs_overlay{
+        background: #0b0b0b;
+        opacity: 0.8;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        display: none;
+      }
+      .srs_pr_element .srs_overlay.open{
+        display: block;
+      }
+
+
+
+      @media (max-width:1300px){
+
+       .srs_pr_element .srs_navbar_btm_part .srs_navbar_pr .srs_cart_sec .srs_about_popup{
+          display: none;
+        }
+        .srs_pr_element .srs_navbar_btm_part .srs_navbar_pr > .srs_nav_items{
+          position: fixed;
+          flex-direction: column;
+          justify-content: start;
+          align-items: start;
+          top: 0;
+          right: 0;
+          background: #fff;
+          z-index: 12;
+          width: 260px;
+          height: 100vh;
+          transform: translateX(100%);
+          transition: all .5s linear;
+        }
+        .srs_pr_element .srs_navbar_btm_part .srs_navbar_pr > .srs_nav_items.open{
+          transform: translateX(0);
+        }
+        .srs_pr_element .srs_navbar_btm_part .srs_navbar_pr > .srs_nav_items .srs_close_nav{
+          position: relative;
+          height: 50px;
+          width: 100%;
+        }
+        .srs_navbar_btm_part nav.srs_navbar_pr .srs_nav_items .srs_nav_link{
+          line-height: 42px;
+          padding: 0 15px;
+          border-bottom: 1px solid rgba(34, 40, 30, 0.06);
+          width: 100%;text-align: start;
+        }
+        .srs_navbar_btm_part nav.srs_navbar_pr .srs_nav_items .srs_nav_link:hover{
+          background: #0e1c41;
+          color: #fff;
+        }
+        .srs_navbar_btm_part nav.srs_navbar_pr .srs_nav_items > .srs_nav_item{
+          width: 100%;
+          align-items: start;
+          height: auto;
+        }
+        .srs_navbar_btm_part nav.srs_navbar_pr .srs_nav_items .srs_nav_link span{
+          justify-content: start;
+        }
+  .srs_pr_element .srs_navbar_btm_part .srs_navbar_pr > .srs_nav_items .srs_close_nav::before{
+    content: "";
+    height: 35%;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    top: 0;
+    width: 2px;
+    transform: rotate(45deg);
+    background-color: #22281E;
+    transition: all 0.3s linear 0s;
+}
+  .srs_pr_element .srs_navbar_btm_part .srs_navbar_pr > .srs_nav_items .srs_close_nav::after{
+    content: "";
+    height: 35%;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    top: 0;
+    width: 2px;
+    transform: rotate(-45deg);
+    background-color: #22281E;
+    transition: all 0.3s linear 0s;
+}
+.srs_pr_element .srs_navbar_btm_part .srs_navbar_pr .srs_cart_sec .srs_nav_open{
+  color: #22281E;
+    cursor: pointer;
+    display: inline-block;
+    height: 1.3rem;
+    line-height: 1rem;
+    text-decoration: none ;
+}
+.srs_pr_element .srs_navbar_btm_part .srs_navbar_pr .srs_cart_sec .srs_nav_open i{
+  background-color: currentColor;
+    height: 1px;
+    position: relative;
+    width: 40px;
+    transition: background-color 10ms 300ms ease;
+    display: inline-block;
+    font-size: 1.1rem;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+.srs_pr_element .srs_navbar_btm_part .srs_navbar_pr .srs_cart_sec .srs_nav_open i::before{
+  background: currentColor;
+    content: "";
+    height: 1px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transition: left 300ms 350ms ease, top 300ms 350ms ease, transform 300ms 50ms ease;
+    top:-8px;
+}
+.srs_pr_element .srs_navbar_btm_part .srs_navbar_pr .srs_cart_sec .srs_nav_open i::after{
+  background: currentColor;
+    content: "";
+    height: 1px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transition: left 300ms 350ms ease, top 300ms 350ms ease, transform 300ms 50ms ease;
+    top:8px;
+}
+.srs_navbar_btm_part{
+  padding: 0 30px;
+}
+.srs_pr_element .srs_navbar_btm_part .srs_navbar_pr .srs_cart_sec .srs_nav_open:hover i::after{
+  left: -5px;
+}
+.srs_pr_element .srs_navbar_btm_part .srs_navbar_pr .srs_cart_sec .srs_nav_open:hover i::before{
+  left: -5px;
+}
+.srs_navbar_btm_part nav.srs_navbar_pr .srs_nav_items > .srs_nav_item:hover .srs_mega_menu .srs_inner_items_all{
+  top: 0;
+}
+.srs_navbar_btm_part nav.srs_navbar_pr .srs_nav_items > .srs_nav_item .srs_mega_menu .srs_inner_items_all{
+  position: fixed;
+          flex-direction: column;
+          justify-content: start;
+          align-items: start;
+          top: 0;
+          left: auto;
+          right: 0;
+          background: #fff;
+          z-index: 12;
+          width: 260px;
+          min-height: 100vh;
+          height: auto;
+          box-shadow: none;
+          border-radius: 0;
+          top:0;
+          transform: translateX(100%);
+          margin: 0;
+          overflow-y: auto;
+          transition: all .5s linear;
+
+}
+.srs_navbar_btm_part nav.srs_navbar_pr .srs_nav_items > .srs_nav_item .srs_mega_menu .srs_inner_items_all.srs_all_courses_child.open{
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.srs_navbar_btm_part nav.srs_navbar_pr .srs_nav_items .srs_mega_menu .srs_inner_items_all .srs_inner_item_sec{
+width: 100%;
+}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="srs_pr_element">
+      <div class="srs_navbar_up_part">
+        <div class="srs_icon_sec">
+          <a href="#">
+            <img src="/img/facebook.png" alt="icon" />
+          </a>
+          <a href="#">
+            <img src="/img/linkedin.png" alt="icon" />
+          </a>
+          <a href="#">
+            <img src="/img/pinterest.png" alt="icon" />
+          </a>
+          <a href="#">
+            <img src="/img/instagram.png" alt="icon" />
+          </a>
+        </div>
+        <h5 class="srs_quote">
+          Want to launch innovative new courses –
+          <a href="#"> We’ll Show You. </a>
+        </h5>
+        <div class="srs_name_sec">
+          <h5 class="srs_userName">Welcome, Jone Doe</h5>
+        </div>
+      </div>
+      <div class="srs_navbar_btm_part">
+        <nav class="srs_navbar_pr">
+          <div class="srs_logo">
+            <img src="/img/logo.png" alt="logo" />
+          </div>
+          <ul class="srs_nav_items">
+            <li class="srs_close_nav">
+
+            </li>
+            <li class="srs_nav_item">
+              <a class="srs_nav_link" href="#">
+                <span>Home </span>
+              </a>
+            </li>
+            <li class="srs_nav_item">
+              <a class="srs_nav_link" href="#">
+                <span>Regulated Courses </span>
+              </a>
+            </li>
+            <li class="srs_nav_item">
+              <a class="srs_nav_link" href="#">
+                <span>Endorsed Courses </span>
+              </a>
+            </li>
+            <li class="srs_nav_item">
+              <a class="srs_nav_link srs_courses_btn" href="#">
+                <span
+                  >All Courses
+                  <img src="/img/down.png" alt="icon" />
+                </span>
+              </a>
+              <div class="srs_mega_menu">
+                <div class="srs_inner_items_all srs_all_courses_child">
+                  <ul class="srs_inner_item_sec">
+                    <h4 class="srs_course_title">Elements Set - 1</h4>
+                    <li class="srs_inner_item">
+                      <a href="#">
+                        <span> Career Advice </span>
+                      </a>
+                    </li>
+                    <li class="srs_inner_item">
+                      <a href="#">
+                        <span> Business Tips & Tricks </span>
+                      </a>
+                    </li>
+                    <li class="srs_inner_item">
+                      <a href="#">
+                        <span> Marketing Trend 2023 </span>
+                      </a>
+                    </li>
+                    <li class="srs_inner_item">
+                      <a href="#">
+                        <span> Pro Web Designing </span>
+                      </a>
+                    </li>
+                    <li class="srs_inner_item">
+                      <a href="#">
+                        <span> Essentials For Designers </span>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="srs_inner_item_sec">
+                    <h4 class="srs_course_title">Elements Set - 1</h4>
+                    <li class="srs_inner_item">
+                      <a href="#">
+                        <span> Career Advice </span>
+                      </a>
+                    </li>
+                    <li class="srs_inner_item">
+                      <a href="#">
+                        <span> Business Tips & Tricks </span>
+                      </a>
+                    </li>
+                    <li class="srs_inner_item">
+                      <a href="#">
+                        <span> Marketing Trend 2023 </span>
+                      </a>
+                    </li>
+                    <li class="srs_inner_item">
+                      <a href="#">
+                        <span> Pro Web Designing </span>
+                      </a>
+                    </li>
+                    <li class="srs_inner_item">
+                      <a href="#">
+                        <span> Essentials For Designers </span>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="srs_inner_item_sec">
+                    <a href="#">
+                      <img src="/img/New-Online-class.jpg" alt="course Image" />
+                    </a>
+                  </ul>
+                  <ul class="srs_inner_item_sec">
+                    <a href="#">
+                      <img src="/img/New-Online-class.jpg" alt="course Image" />
+                    </a>
+                  </ul>
+                  <ul class="srs_inner_item_sec">
+                    <a href="#">
+                      <img src="/img/New-Online-class.jpg" alt="course Image" />
+                    </a>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="srs_nav_item">
+              <a class="srs_nav_link" href="#">
+                <span
+                  >Explore More
+                  <img src="/img/down.png" alt="icon" />
+                </span>
+              </a>
+              <div class="srs_mega_menu">
+                <ul class="srs_inner_items">
+                  <li class="srs_inner_item">
+                    <a href="#">
+                      <span> Career Advice </span>
+                    </a>
+                  </li>
+                  <li class="srs_inner_item">
+                    <a href="#">
+                      <span> Explore More </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <div class="srs_cart_sec">
+            <a class="srs_search" href="#">
+              <img src="/img/search.png" alt="" />
+            </a>
+            <a class="srs_cart" href="#">
+              <img src="/img/cart.png" alt="" />
+            </a>
+            <a href="#" class="r-custom-4-button-h">
+              <div class="koc-buttn">
+                <span class="label-up">Get Started</span>
+                <span class="label-up">Get Started</span>
+              </div>
+            </a>
+            <span class="srs_about_popup"
+              ><i
+                ><svg
+                  class="srs_shiny_effect"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 100 100"
+                  style="enable-background: new 0 0 100 100"
+                  xml:space="preserve"
+                >
+                  <g class="hambar-one">
+                    <rect x="1" y="38.6" width="98" height="2.5"></rect>
+                    <rect x="110" y="38.6" width="98" height="2.5"></rect>
+                  </g>
+                  <g class="hambar-two">
+                    <rect x="1" y="58.9" width="98" height="2.5"></rect>
+                    <rect x="110" y="58.9" width="98" height="2.5"></rect>
+                  </g></svg></i
+            ></span>
+            <a href="#" class="srs_nav_open">
+              <i></i>
+            </a>
+          </div>
+        </nav>
+      </div>
+      <div class="srs_about_us">
+        <div class="srs_about_us_sec">
+          <h3 class="srs_title">About Us</h3>
+          <img class="srs_img" src="/img/about image.jpg" alt="about image" />
+          <p class="srs_des">
+            Continually underwhelm 24/7 leadership with interactive total linkage.
+            Intrinsicly create visionary bandwidth vis-a-vis next-generation
+            collaboration.
+          </p>
+          <a href="#" class="r-custom-4-button-h">
+            <div class="koc-buttn">
+              <span class="label-up">Know More</span>
+              <span class="label-up">Know More</span>
+            </div>
+          </a>
+          <div class="srs_social">
+            <h3 class="srs_title">We Are Social</h3>
+            <div class="srs_icon_div">
+              <p class="srs_icon_text">Follow Us:</p>
+              <div class="srs_icon">
+                <a href="#">
+                  <img src="/img/fb icon.png" alt="" />
+                </a>
+              </div>
+              <div class="srs_icon">
+                <a href="#">
+                  <img src="/img/insta icon.png" alt="" />
+                </a>
+              </div>
+              <div class="srs_icon">
+                <a href="#">
+                  <img src="/img/twitter icon.png" alt="" />
+                </a>
+              </div>
+              <div class="srs_icon">
+                <a href="#">
+                  <img src="/img/linkedin icon.png" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="srs_contact">
+            <h3 class="srs_title">Contact Us</h3>
+            <div class="srs_contact_info">
+              <div class="srs_call">
+                <img src="/img/call.png" alt="" />
+                <p><a href="#">+1 840 841 25 69</a></p>
+              </div>
+              <div class="srs_email">
+                <img src="/img/email.png" alt="" />
+                <p><a href="#">info@email.com</a></p>
+              </div>
+            </div>
+          </div>
+          <button class="srs_close_about">
+            x
+          </button>
+        </div>
+        
+      </div>
+      <div class="srs_overlay">
+
+      </div>
+    </div>
+
+
+
+    <script>
+      const srsAboutTrigger = document.querySelector(".srs_about_popup");
+      const srsAboutTriggerClose = document.querySelector(".srs_close_about");
+      const srsOverlay = document.querySelector(".srs_overlay");
+      const srsAboutSec = document.querySelector(".srs_about_us");
+      const srsNavOpenTriger = document.querySelector(".srs_nav_open");
+      const srsNavCloseTriger = document.querySelector(".srs_close_nav");
+      const srsNavOpenSec = document.querySelector(".srs_nav_items");
+      const srsCourseBtn = document.querySelector(".srs_courses_btn");
+      const srsCourseSec = document.querySelector(".srs_all_courses_child");
+
+
+      srsAboutTrigger.addEventListener("click", () =>{
+        srsOverlay.classList.add("open");
+        srsAboutSec.classList.add("open");
+      })
+      srsAboutTriggerClose.addEventListener("click", () =>{
+        srsOverlay.classList.remove("open");
+        srsAboutSec.classList.remove("open");
+      })
+      srsNavCloseTriger.addEventListener("click", () =>{
+        srsOverlay.classList.remove("open");
+        srsNavOpenSec.classList.remove("open");
+      })
+      srsNavOpenTriger.addEventListener("click", () =>{
+
+        srsOverlay.classList.add("open");
+        srsNavOpenSec.classList.add("open");
+      })
+      srsCourseBtn.addEventListener("click", () =>{
+
+        srsCourseSec.classList.add("open");
+      })
+    </script>
+  </body>
+</html>
